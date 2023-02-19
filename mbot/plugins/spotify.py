@@ -77,7 +77,6 @@ async def spotify_dl(_,message):
             dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
             audio = FLAC(path)
             audio["YEAR_OF_RELEASE"] = song.get('year')
-            audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
             audio["GEEK_SCORE"] = "9"
             audio["ARTIST"] = song.get('artist')                                                                            
             audio["ALBUM"] = song.get('album')
@@ -96,8 +95,7 @@ async def spotify_dl(_,message):
             audi.add_picture(image)
             audi.save()
             AForCopy = await message.reply_audio(path,performer=f"{song.get('artist')}",title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,quote=True)
-            feedback = await message.reply_text(f"Done✅",   
-             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
+            feedback = await message.reply_text(f"Download Complete ✅")
             shutil.rmtree(randomdir)
             if LOG_GROUP:
                 await sleep(2.5)
@@ -117,7 +115,6 @@ async def spotify_dl(_,message):
                 sleeping  = await sleep(0.8)
                 audio = FLAC(path)
                 audio["YEAR_OF_RELEASE"] = song.get('year')
-                audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
                 audio["GEEK_SCORE"] = "9"
                 audio["ARTIST"] = song.get('artist')                                                                           
                 audio["ALBUM"] = song.get('album')
@@ -136,8 +133,7 @@ async def spotify_dl(_,message):
                 audi.add_picture(image)
                 audi.save()
                 AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,quote=True)
-                feedback = await message.reply_text(f"Done✅",   
-                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
+                feedback = await message.reply_text(f"Download Complete ✅")
                 shutil.rmtree(randomdir)
                 if LOG_GROUP:
                     await sleep(2.5)
@@ -154,7 +150,6 @@ async def spotify_dl(_,message):
                 sleeping  = await sleep(0.8)
                 audio = FLAC(path)
                 audio["YEAR_OF_RELEASE"] = song.get('year')
-                audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
                 audio["GEEK_SCORE"] = "9"
                 audio["ARTIST"] = song.get('artist')                                                                         
                 audio["ALBUM"] = song.get('album')
@@ -173,8 +168,7 @@ async def spotify_dl(_,message):
                 audi.add_picture(image)
                 audi.save()
                 AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,quote=True)
-                feedback = await message.reply_text(f"Done✅",   
-                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
+                feedback = await message.reply_text(f"Download Complete ✅")
                 shutil.rmtree(randomdir)
                 if LOG_GROUP:
                     await sleep(2.5)
@@ -184,8 +178,7 @@ async def spotify_dl(_,message):
     except Exception as e:
         LOGGER.error(e)
         K = await m.edit_text(e)
-        H = await message.reply_text(f"Done✅",   
-             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Error Detected", callback_data="bug")]]))
+        H = await message.reply_text(f"Download Complete ✅")
         await message.reply_text(f"you can also get it from Saavn type /saavn music_name")
         if BUG:
            await forward(K,H)
@@ -200,4 +193,4 @@ async def bug(_,query):
       await query.message.edit(f"please report to the dev with above error occurred message")
       await sleep(2.3)
       await query.message.edit(f"Bug Report 🪲",
-                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Report to dev ", url="https://t.me/masterolic")]]))
+                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Report ", url="https://t.me/")]]))
