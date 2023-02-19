@@ -96,7 +96,6 @@ async def spotify_dl(_,message):
             audi.save()
             AForCopy = await message.reply_audio(path,performer=f"{song.get('artist')}",title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,quote=True)
             feedback = await message.reply_text(f"Download Complete ✅")
-            shutil.rmtree(randomdir)
             if LOG_GROUP:
                 await sleep(2.5)
                 await copy(PForCopy,AForCopy)
@@ -134,7 +133,6 @@ async def spotify_dl(_,message):
                 audi.save()
                 AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,quote=True)
                 feedback = await message.reply_text(f"Download Complete ✅")
-                shutil.rmtree(randomdir)
                 if LOG_GROUP:
                     await sleep(2.5)
                     await copy(PForCopy,AForCopy)
@@ -169,7 +167,6 @@ async def spotify_dl(_,message):
                 audi.save()
                 AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,quote=True)
                 feedback = await message.reply_text(f"Download Complete ✅")
-                shutil.rmtree(randomdir)
                 if LOG_GROUP:
                     await sleep(2.5)
                     await copy(PForCopy,AForCopy)
