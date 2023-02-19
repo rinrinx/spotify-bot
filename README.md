@@ -1,9 +1,6 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-## Koyeb Deploy
-Use the below button to deploy the bot in Koyeb.
-
 Hey this is a official old  repo of [@spotify_downloa_bot](https://t.me/Spotify_downloa_bot)
 #Updated to latest pyrogram 
 # Hey welcome 
